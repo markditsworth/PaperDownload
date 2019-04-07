@@ -15,6 +15,16 @@ Here's how you can set it up for yourselef.
 
 3. Edit `secret.py` to give your API keys and Access Tokens. They must be string type.
 
-4. Edit line 32 of `bot.py` so that it reads python`if username == '<your screen name>':` so that your bot will only respond to your personal twitter handle.
+4. Edit line 32 of `bot.py` so that it reads 
+python```
+if username == '<your screen name>':``` 
+so that your bot will only respond to your personal twitter handle.
 
-5. Edit line 41 of `bot.py` so that it reads python`stream.filter(track=['@<the screen name of the bot you created in step 1>'])`
+5. Edit line 41 of `bot.py` so that it reads 
+python```
+stream.filter(track=['@<the screen name of the bot you created in step 1>'])```
+so that your bot is triggered when it is mentioned in a reply.
+
+6. Once you run the code, any arxiv paper linked in a tweet you reply to mentioning your bot will be downloaded into the working directory.
+
+If you run the application on the device you will be reading/printing the paper from, it should always be online for the functionality to work. In my case, my device will not always be online (or on for that matter). So I have a free-tier cloud compute resource running the bot application, in conjunction with an sftp server. Whenever I invoke the bot on Twitter, the paper will be downloaded to cloud storage, and I can access it through the sftp client on my tablet.
