@@ -29,7 +29,7 @@ def download(page_link):
 class BotStreamer(tweepy.StreamListener):
     def on_status(self,status):
         username = status.user.screen_name
-        if username == 'markditsworth':
+        if username == 'markditsworth': # only continue if the username is valid
             status_id_in_reply_to = status.in_reply_to_status_id
             parent_status = api.statuses_lookup([status_id_in_reply_to])[0]
             link = parent_status.entities['urls'][0]['expanded_url']
@@ -38,10 +38,4 @@ class BotStreamer(tweepy.StreamListener):
 
 myListener = BotStreamer()
 stream = tweepy.Stream(auth,myListener)
-stream.filter(track=['@PaperDownload'])
-
-# verify user is @markditsworth
-
-# parse tweet for link
-
-# 
+stream.filter(track=['@PaperDownload']) # trigger on mentions of the bot account's handle
