@@ -19,6 +19,6 @@ Here's how you can set it up for yourselef.
 
 4. Also in `secret.py`, set `bot_handle` to your bot's handle (e.g. @give_me_knowledge) and set `username` to your username (no @).
 
-5. Once you run the code, any arxiv paper linked in a tweet you reply to mentioning your bot will be downloaded into the working directory.
+5. Once you run `bot.py`, any arxiv paper linked in a tweet you reply to mentioning your bot will be downloaded into the working directory.
 
 If you run the application on the device you will be reading/printing the paper from, it should always be online for the functionality to work. In my case, my device will not always be online (or on for that matter). So I have a free-tier cloud compute resource running the bot application, in conjunction with an sftp server. Whenever I invoke the bot on Twitter, the paper will be downloaded to cloud storage, and I can access it through the sftp client on my tablet.
