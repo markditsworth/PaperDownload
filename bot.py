@@ -17,14 +17,22 @@ api = tweepy.API(auth)
 print("Authenticated!")
 
 def download(page_link):
-    end = page_link.split('/')[-1]
-    link = 'https://arxiv.org/pdf/'+end+'.pdf'
-    paper_name = ''.join(end.split('.'))+'.pdf'
-    r = requests.get(link)
-    print("downloading link from %s..."%link)
-    with open(paper_name, 'wb') as fObj:
-        fObj.write(r.content)
-    print("done")
+    if '/abs/' in page_link:
+        end = page_link.split('/')[-1]
+        link = 'https://arxiv.org/pdf/'+end+'.pdf'
+        paper_name = ''.join(end.split('.'))+'.pdf'
+        r = requests.get(link)
+        print("downloading link from %s..."%link)
+        with open(paper_name, 'wb') as fObj:
+            fObj.write(r.content)
+        print("done")
+    elif '.pdf' == page_link[-4:]:
+        r = requests.get(page_link)
+        paper_name = page_link.split('/')[-1]
+        print("downloading link from %s..."%page_link)
+        with open(paper_name, 'wb') as fObj:
+            fObj.write(r.content)
+        print("done")
 
 class BotStreamer(tweepy.StreamListener):
     def on_status(self,status):
