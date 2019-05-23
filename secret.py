@@ -14,4 +14,3 @@ access_token_secret = "SECRET ACCESS TOKEN"
 
 bot_handle = "@twitter_bot_handle"
 username = "your screen name" # do not include the @
-runtime = 20 * 3600 # [hours] * 3600 = [seconds]
