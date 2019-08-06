@@ -13,7 +13,7 @@ This code works on links to ArXiv abstracts (arxiv.org/abs/...)  or any link end
 
 Here's how you can set it up for yourselef.
 
-1. Make a twitter account for your bot, and register it as an app. [This article](https://scotch.io/tutorials/build-a-tweet-bot-with-python) was my primary reference for this step. Once your app is registered, access and generate your API keys and Access Tokens.
+1. Make a twitter account for your bot, and register it as an app. [This article](https://realpython.com/twitter-bot-python-tweepy/#creating-twitter-api-authentication-credentials) was my primary reference for this step. Once your app is registered, access and generate your API keys and Access Tokens.
 
 2. Clone the repo in your desired location. Make sure you have all dependencies satisfied.
 
